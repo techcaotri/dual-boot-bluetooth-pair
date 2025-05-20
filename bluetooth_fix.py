@@ -81,8 +81,9 @@ def _process_reg_file(config):
         print('  EDiv: {}'.format(_format_ediv(config[section]['EDIV'])))
         print('  Rand: {}'.format(_format_erand(config[section]['ERand'])))
         print('LocalSignatureKey')
-        print('  Key: {}'.format(
-            _format_csrk(config[section]['CSRK'])))
+        if 'CSRK' in config[section]:
+            print('  Key: {}'.format(
+                _format_csrk(config[section]['CSRK'])))
         print('\n====================================\n')
 
 
